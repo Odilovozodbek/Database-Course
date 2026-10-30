@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#147d68" />
+    <meta
+      name="description"
+      content="MySQL Ustoz — MySQL’ni o‘zbek tilida, 5 daraja va 40 ta amaliy dars orqali o‘rganing. Kod yozing, natijani ko‘ring va bilimlaringizni sinang." />
+    <title>MySQL Ustoz — Birinchi so‘rovdan professionalgacha</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23147d68'/%3E%3Ctext x='6' y='27' fill='white' font-size='24' font-family='monospace'%3E%26gt;_%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Asosiy qismga o‘tish</a>
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#/" aria-label="MySQL Ustoz bosh sahifa"
+        ><span class="brand-mark">&gt;_</span
+        ><span>MySQL<span class="brand-light">ustoz</span><small>O‘RGAN. YOZ. NATIJA OL.</small></span></a
+      >
+      <div class="nav-caption">O‘QUV MAYDONI</div>
+      <nav id="navigation" aria-label="Asosiy menyu"></nav>
+      <div class="sidebar-path">
+        <span class="nav-caption">SIZNING YO‘LINGIZ</span>
+        <div id="sidebar-levels"></div>
+      </div>
+      <a class="sidebar-note" href="#/guide"
+        ><span class="note-icon">✦</span><strong>Har bir so‘rov — bir qadam.</strong>
+        <p>Kichik mashqlar katta bilimga olib boradi.</p>
+        <span>SQL qo‘llanmani ochish <span>↗</span></span></a
+      >
+      <div class="sidebar-footer"><span class="online-dot"></span> O‘zbek tilida. Bepul. Hammaga.</div>
+    </aside>
+    <div class="sidebar-shade" id="sidebar-shade"></div>
+    <div class="workspace">
+      <header class="topbar">
+        <div class="header-left">
+          <button
+            id="menu-toggle"
+            class="icon-button mobile-menu"
+            aria-label="Menyuni ochish"
+            aria-expanded="false"></button>
+          <div class="breadcrumb">
+            <span>O‘quv maydoni</span><span class="breadcrumb-slash">/</span
+            ><strong id="breadcrumb-current">O‘quv yo‘li</strong>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button class="search-trigger" id="search-open">
+            <span id="search-icon"></span><span>Darslarni qidirish...</span><kbd>Ctrl K</kbd></button
+          ><button class="icon-button" id="theme-toggle" aria-label="Tungi rejimni yoqish"></button
+          ><span class="header-divider"></span
+          ><button class="avatar" id="profile-open" aria-label="Profilni ochish">O</button>
+        </div>
+      </header>
+      <main id="main" tabindex="-1"></main>
+      <footer class="main-footer">
+        <span>MySQL<span>ustoz</span> <span class="footer-dot">·</span> Bilim — eng yaxshi investitsiya.</span
+        ><a href="https://dev.mysql.com/doc/refman/8.4/en/" target="_blank" rel="noopener noreferrer"
+          >MySQL rasmiy hujjatlari ↗</a
+        >
+      </footer>
+    </div>
+    <dialog id="search-dialog" class="search-dialog">
+      <div class="search-box">
+        <span id="dialog-search-icon"></span
+        ><input
+          id="search-input"
+          aria-label="Dars qidirish"
+          placeholder="Masalan: SELECT, baza yaratish, JOIN..." /><button
+          class="icon-button"
+          data-close="search-dialog"
+          aria-label="Qidirishni yopish">
+          ✕
+        </button>
+      </div>
+      <div id="search-results"></div>
+      <div class="search-bottom"><span>40 ta dars va SQL buyruqlari</span><kbd>ESC</kbd> yopish</div>
+    </dialog>
+    <dialog id="profile-dialog" class="profile-dialog">
+      <div class="modal-heading">
+        <h2>O‘quvchi profili</h2>
+        <button class="icon-button" data-close="profile-dialog" aria-label="Yopish">✕</button>
+      </div>
+      <p>O‘zingizga mos o‘quv maydonini yarating.</p>
+      <form id="profile-form">
+        <label for="profile-name">Ismingiz</label
+        ><input id="profile-name" maxlength="32" placeholder="Ismingizni yozing" required /><label for="daily-goal"
+          >Kunlik maqsad</label
+        ><select id="daily-goal">
+          <option value="1">Kuniga 1 ta dars</option>
+          <option value="2">Kuniga 2 ta dars</option>
+          <option value="3">Kuniga 3 ta dars</option>
+        </select>
+        <p class="muted small">Natijalaringiz shu brauzerda saqlanadi. Hisob ochish shart emas.</p>
+        <button class="button primary" type="submit">Saqlash</button>
+      </form>
+    </dialog>
+    <dialog id="confirm-dialog" class="profile-dialog">
+      <div class="modal-heading">
+        <h2 id="confirm-title">Qayta boshlash</h2>
+        <button class="icon-button" data-close="confirm-dialog" aria-label="Yopish">✕</button>
+      </div>
+      <p id="confirm-text"></p>
+      <div class="confirm-buttons">
+        <button class="button secondary" data-close="confirm-dialog">Bekor qilish</button
+        ><button class="button danger" id="confirm-action">Tozalash</button>
+      </div>
+    </dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <noscript>Saytdan foydalanish uchun brauzeringizda JavaScript’ni yoqing.</noscript>
+  </body>
+</html>
